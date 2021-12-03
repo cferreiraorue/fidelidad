@@ -11,7 +11,6 @@ const getAll = async () => {
   try {
     /*let res = await fetch("https://randomuser.me/api/?results=3"),*/
     /*let res = await fetch("http://localhost:3000/clientes"),*/
-
     let res = await fetch("http://localhost:8080/webservices-1.0/cliente/listar"),
     datajson = await res.json();
     /*alert("16");*/
@@ -73,7 +72,8 @@ d.addEventListener("submit", async e => {
         let options = {
           method: "POST",
           headers: {
-            "Content-type": "application/json; charset=utf-8"
+            "Content-type": "application/json; charset=utf-8",
+            "Accept":"application/json"
           },
           body: JSON.stringify({
             nombre: e.target.nombre.value,
